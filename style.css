@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('font/OpenSans-Bold.ttf');
+}
+*{
+    padding: 0; margin: 0; box-sizing: border-box; outline: none; border: none; text-decoration: none;
+}
+:root{
+    --cor1 : #FF4656;
+    --cor2 : #FFFFFF;
+    --cor3 : #1F2326;
+}
+body{
+    background-color: var(--cor3); 
+   
+}
+.background {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor1);
+}
+.background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 0, 30% 100%, 100% 100%);
+    z-index: -1;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+main{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../images/bg.svg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.personagem-valorant{
+    display: flex;
+    margin: 10px;
+}
+.personagem-valorant a > img{
+    clip-path: polygon(15% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 15%);
+    background: var(--cor1);
+    border: 1.5px solid #fff;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+.personagem-valorant a > img:hover {
+  transform: scale(1) translate(-10px, -10px);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+}
+.personagem1, .personagem2, .personagem3 {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+}
+.img-borda {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  left: -15px;
+  top: -15px;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  
+}
+.img-borda::after {
+  content: "";
+  position: absolute;
+  background: #1f2326;
+  width: 98.5%;
+  height: 98.5%;
+  left: 1px;
+  top: 1px;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+}
+.personagem1 > p, .personagem2 > p,.personagem3 > p{
+    text-align: center;
+    color:var(--cor2);
+    font-family: 'OpenSans-Bold', Arial, Helvetica, sans-serif;
+    transform: translate(0px, 10px);
+}
+.direita > img{
+    width: 510px;
+}
